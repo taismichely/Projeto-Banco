@@ -1,8 +1,16 @@
 import leia from 'readline-sync'
 import {colors} from './src/util/Colors'
+import { Conta } from './src/model/Conta'
 
 export function main() {
   let opcao: number
+  const conta: Conta = new Conta(1, 123, 'Taís Michely', 10000, 1)
+  conta.visualizar()
+  conta.sacar(1500)
+  conta.visualizar()
+  conta.depositar(5000)
+  conta.visualizar()
+
   while (true) {
 
     console.log('*********************************************************')
