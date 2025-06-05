@@ -1,15 +1,25 @@
 import leia from 'readline-sync'
 import {colors} from './src/util/Colors'
 import { Conta } from './src/model/Conta'
+import { ContaCorrente } from './src/model/ContaCorrente';
+import { ContaPoupanca } from './src/model/ContaPoupanca';
 
 export function main() {
   let opcao: number
-  const conta: Conta = new Conta(1, 123, 'Taís Michely', 10000, 1)
-  conta.visualizar()
-  conta.sacar(1500)
-  conta.visualizar()
-  conta.depositar(5000)
-  conta.visualizar()
+
+  const contacorrente: ContaCorrente = new ContaCorrente(2, 123, "Mariana", 15000, 1000, 1);
+  contacorrente.visualizar();
+  contacorrente.sacar(2000);
+  contacorrente.visualizar();
+  contacorrente.depositar(1000);
+  contacorrente.visualizar();
+  
+  const contapoupanca: ContaPoupanca = new ContaPoupanca(3, 123, "Victor", 1000, 10, 2);
+  contapoupanca.visualizar();
+  contapoupanca.sacar(200);
+  contapoupanca.visualizar();
+  contapoupanca.depositar(1000);
+  contapoupanca.visualizar();
 
   while (true) {
 
@@ -71,12 +81,13 @@ export function main() {
     }
   }
 }
-export function sobre(): void {
+function sobre(): void {
       console.log('\n********************************************************')
       console.log('Projeto desenvolvido por: Taís Michely')
       console.log('Generation Brasil - taise@genstudents.org')
       console.log('github.com/taismichely')
       console.log('*********************************************************')
 }
+
 
 main();

@@ -1,6 +1,6 @@
 //Conta - numero, agencia, titulo, saldo, tipo (classe - atributos)
 
-export class Conta {
+export abstract class Conta {
   private _numero: number
   private _agencia: number
   private _titulo: string
